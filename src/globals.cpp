@@ -1,5 +1,6 @@
 /*
  * globals.cpp
+ * Copyright 2012 Scott Walmsley, Hyungwon Choi and Damian Fermin
  *
  */
  

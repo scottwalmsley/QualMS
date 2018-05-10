@@ -2,6 +2,7 @@
  * statFunctions.cpp
  *
  * All generic statistical functions used by qualMS
+ *   Copyright 2012 Scott Walmsley, Hyungwon Choi and Damian Fermin
  */
 
 #include<cmath>

@@ -1,8 +1,8 @@
 /*
  * qualMS_main.cpp
  *
- *  Created on: Jul 8, 2013
- *      Author: dfermin
+ *  
+ *     Copyright 2012 Scott Walmsley, Hyungwon Choi and Damian Fermin    
  */
 
 #include <iostream>

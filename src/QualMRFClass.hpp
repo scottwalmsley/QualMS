@@ -1,5 +1,5 @@
 /*
- * qualMRFClass.hpp
+ * qualMRFClass.hpp  Copyright 2012 Scott Walmsley, Hyungwon Choi and Damian Fermin
  *
  * Definition of the Qual MRF object class
  */

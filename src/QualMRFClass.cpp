@@ -1,5 +1,5 @@
 /*
- * QualMRFClass.cpp
+ * QualMRFClass.cpp  Copyright 2012 Scott Walmsley, Hyungwon Choi and Damian Fermin
  *
  * Functions of the QualMRFClass object
  */
