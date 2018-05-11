@@ -5,7 +5,7 @@ Algorithmic design by Hyungwon Choi (BIC)<br>
 Informatic design and code by Damian Fermin.<br>
 Overall Design and code by Scott Walmsley.<br>
 
-#Usage
+# Usage
 ```
 USAGE: qualMS.exe -k -b -d
 ```
