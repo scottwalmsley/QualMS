@@ -14,10 +14,12 @@ USAGE: qualMS.exe -k -b -d
     -k           Assume 'k' states (Run -b option first)
     -d <path>    Path to folder containing input matrix files. ** Required input **
     -b <#:#>     Provide an estimate for best number of 'k' states using BIC
-    ```
     
+```
+```    
     Example usage: -b 3:10 means consider between 3 and 10 states
 ```
-	     Using the -b flag, qualMS will only report the best value for K and exit<br>
+```
+         Using the -b flag, qualMS will only report the best value for K and exit.
 
 ```
