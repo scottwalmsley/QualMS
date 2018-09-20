@@ -55,6 +55,7 @@ QualMRFClass::QualMRFClass(string &d, int R, int C) {
 		exit(EXIT_FAILURE);
 	}
 
+	// Either run Beyesian Information Criterion estimate of k states or run the decompression of markov random field using k states.
 	if(g_runBIC) cout << "Estimating optimal states for ";
 	else cout << endl << "Parsing " ;
 		
@@ -118,7 +119,7 @@ void QualMRFClass::initializeModelParams() {
 		modelParamVec[i].mu = ( (i+1)/(g_STATES_K + 1) ) * maxLogVal;
 	}
 
-	//initalize Z-matrix object
+	//initalize Z-matrix object (2d matrix with 3d depth (k states)
 	zMAT.resize(boost::extents[Nrow][Ncol][g_STATES_K]);
 
 	for(int r = 0; r < Nrow; r++) {
@@ -145,7 +146,7 @@ void QualMRFClass::fitEM() {
 		
 		cur_iter++;
 
-		// record the paramters from the last iteration.
+		// record the parameters from the last iteration.
 		// if this is the first iteration, just copy the initial values
 		oldParamVec.clear();
 		oldParamVec = modelParamVec;
@@ -229,7 +230,7 @@ void QualMRFClass::fitEM() {
 		} // end loop over g_STATES_K
 
 
-		// compute the difference betweent the values in oldParamVec and modelParamVec
+		// compute the difference between the values in oldParamVec and modelParamVec
 		double delta_pi = 0;
 		double delta_mu = 0;
 		double delta_sigma2 = 0;
@@ -484,13 +485,14 @@ double QualMRFClass::likelihood(const vector<double> &x, vector<double> &grad) {
 
 
 // Function to optimize the values stored in theta
+// COBYLA energy minization with constraints
 void QualMRFClass::optimizeTheta() {
 
 	vector<double> upperB(g_STATES_K+1, 10);
 	vector<double> lowerB(g_STATES_K+1, -10);
 	lowerB[ g_STATES_K ] = 0;
 	
-	//initialize nlopt::opt object
+	//initialize nlopt::opt object (from nlopt library, for JAVA implementation, no constraints)
 	nlopt::opt opt(nlopt::LN_COBYLA, (g_STATES_K + 1));
 	
 	opt.set_lower_bounds(lowerB);

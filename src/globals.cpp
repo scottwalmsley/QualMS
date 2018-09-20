@@ -23,9 +23,9 @@ using namespace boost;
 namespace fs = filesystem;
 
 // Global variables
-int g_STATES_K = -1;
+int g_STATES_K = -1; // For k states in hidden Markov model
 string g_inputDirPath;
-int g_BIC_low = 0;
+int g_BIC_low = 0;  // BIC estimates need boundaries
 int g_BIC_high = 0;
 bool g_runBIC = false;
 

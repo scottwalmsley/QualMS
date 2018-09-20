@@ -36,20 +36,23 @@ class QualMRFClass {
 		vector<double> getStateCount(int r, int c); // private function
 
 	public:
-		QualMRFClass() {};
+	    QualMRFClass() {}; // Call Markov Random Field
 		QualMRFClass(string &d, int R, int C); // default contructor
 		
 		void logTransformMatrix();
 		void initializeModelParams();
+
+		// Fit mutimodal distributions by expectation maximization
 		void fitEM();
 		void chooseK();
 		void rerankParams();
 		void initializeMRF();
-		void ICM();
+		void ICM(); //Iterative Conditional Modes
 		void optimizeTheta();
 		void updateStates();
 		void writeFile();
 
+		// Bayesian Information Criterion
 		double calcBIC();
 		double likelihood(const vector<double> &x, vector<double> &grad/*, vector<double> &stateVec*/);
 
